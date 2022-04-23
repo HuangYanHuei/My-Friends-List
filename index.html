@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--navbar-->
+  <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">MyFriend</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="favorite.html">favorite</a>
+          </li>
+        </ul>
+        <i class="fa fa-filter me-3" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#search-user"></i>
+        <form class="d-flex" id="search-form">
+          <input class="form-control me-2" type="search" placeholder="請輸入姓名" aria-label="Search" id="search-input">
+        </form>
+        <button type="button" class="btn btn-danger" id="filter-clear">Clear</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row" id="data-Panel">
+      <!--render myFriends-->
+    </div>
+  </div>
+
+  <!--modal-->
+  <!-- Modal -->
+  <div class="modal fade" id="myFriends-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myFriends-modal-title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="myfriends-modal-body">
+          <div class="row">
+            <div class="col-sm-4" id="myfriends-modal-img">
+              <img class=" modal-avatar" src="" alt="movie-poster" class="img-fluid">
+            </div>
+            <div class="col-sm-8">
+              <p><em id="myFriends-modal-birthday"></em></p>
+              <p><em id="myFriends-modal-region"></em></p>
+              <p><em id="myFriends-modal-age"></em></p>
+              <p><em id="myFriends-modal-email"></em></p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 篩選器-->
+  <div class="modal" id="search-user" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" fade
+    closeAfterEdit:true>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">篩選器</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <select class="form-select" aria-label="Default select example" id="input-option">
+            <option selected">性別選擇：</option>
+            <option value="male">男</option>
+            <option value="female">女</option>
+            <option value="no">男女皆可</option>
+          </select>
+          <div class="input-group mb-3 mt-3">
+            <span class="input-group-text" id="basic-addon1">年齡：</span>
+            <input type="text" class="form-control" placeholder="Age" aria-label="Username"
+              aria-describedby="basic-addon1" id="input-age">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="filter-submit">submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Paginator-->
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center fixed-bottom">
+    </ul>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
